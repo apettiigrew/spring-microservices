@@ -15,16 +15,21 @@ import com.eazybytes.accounts.service.ICustomersService;
 import com.eazybytes.accounts.service.client.CardsFeignClient;
 import com.eazybytes.accounts.service.client.LoansFeignClient;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
 public class CustomersServiceImpl implements ICustomersService {
-
+    @Autowired
     private AccountsRepository accountsRepository;
+    @Autowired
     private CustomerRepository customerRepository;
+
+    @Autowired
     private CardsFeignClient cardsFeignClient;
+    @Autowired
     private LoansFeignClient loansFeignClient;
 
     /**
